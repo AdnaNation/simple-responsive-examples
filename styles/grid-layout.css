@@ -1,0 +1,90 @@
+.header,
+.nav,
+.main,
+.sidebar,
+.advertising,
+.footer {
+    background-color: blanchedalmond;
+    border: 1px solid tomato;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+.main {
+    grid-area: main;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.advertising {
+    grid-area: advertise;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header   header   header   header"
+        "nav      main     main     sidebar"
+        "nav      main     main       advertise"
+        "footer   footer   footer   footer"
+    ;
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "sidebar"
+            "advertise"
+            "footer"
+
+        ;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .nav li {
+        list-style: none;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "nav     nav"
+            "sidebar main"
+            "advertise footer"
+        ;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav li {
+        list-style: none;
+    }
+}
